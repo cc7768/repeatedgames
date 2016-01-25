@@ -68,3 +68,12 @@ function TwoPlayerGame(δ::Float64, g1::Array{Float64, 2}, g2::Array{Float64, 2}
 
     return TwoPlayerGame(na1, na2, δ, g1, g2, br1, br2, h1, h2)
 end
+
+# Function to initialize the value set
+function intitialize_w0(tp::TwoPlayerGame)
+    # Start with all extreme points
+    w0 = [Point(tp.minu1, tp.minu2), Point(tp.minu1, tp.maxu2),
+          Point(tp.maxu1, tp.maxu2), Point(tp.maxu1, tp.minu2)]
+
+    return w0
+end
